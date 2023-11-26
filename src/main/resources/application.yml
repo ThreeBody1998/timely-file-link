@@ -1,0 +1,17 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: -1
+      max-request-size: -1
+server:
+  port: 8080
+  tomcat:
+    max-connections: 30000
+  resources:
+    static-locations: classpath:/static/,classpath:/resources/
+    add-mappings: false
+  servlet:
+    context-path: /timelyFileLink
+
+
