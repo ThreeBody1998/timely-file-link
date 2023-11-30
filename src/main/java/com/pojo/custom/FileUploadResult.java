@@ -1,15 +1,16 @@
 package com.pojo.custom;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
- * @Author 灵感大王
- * @Date 2023/11/26
- **/
+ * description 文件上传结果
+ * @author 周建泽
+ * @date 2023/11/30
+ */
 @Data
-@AllArgsConstructor
-public class FileVO {
+@Accessors(chain = true)
+public class FileUploadResult {
     /**
      * 文件ID
      */
@@ -22,5 +23,8 @@ public class FileVO {
      * 文件链接
      */
     private String fileUrl;
-
+    /**
+     * 文件路径
+     */
+    private String filePath;
 }

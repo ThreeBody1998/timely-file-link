@@ -4,16 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
- * @Author 灵感大王
- * @Date 2023/11/26
- **/
+ * description 文件缓存VO
+ * @author 周建泽
+ * @date 2023/11/27
+ */
 @Data
-@AllArgsConstructor
-public class FileVO {
-    /**
-     * 文件ID
-     */
-    private String fileId;
+public class FileCacheVO {
     /**
      * 文件名
      */
@@ -23,4 +19,7 @@ public class FileVO {
      */
     private String fileUrl;
 
+    public FileCacheVO(FileVO fileVO){
+        this.fileName = fileVO.getFileName();
+    }
 }

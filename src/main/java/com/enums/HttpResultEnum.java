@@ -51,6 +51,10 @@ public enum HttpResultEnum {
      */
     SERVER_ERROR(500,"服务器异常"),
     /**
+     * 文件夹创建失败
+     */
+    FILE_FOLDER_CREATE_ERROR(501,"文件夹创建失败"),
+    /**
      * 文件下载失败
      */
     FILE_DOWNLOAD_ERROR(501,"文件下载失败"),

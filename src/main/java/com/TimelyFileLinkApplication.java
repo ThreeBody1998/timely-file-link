@@ -1,5 +1,6 @@
 package com;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -11,7 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
  * @Date 2023/11/26
  **/
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.util","com.controller","com.config"})
+@ComponentScan(basePackages = {"com.util","com.controller","com.config","com.service","com.mapper","com.strategy","com.util"})
+@MapperScan(value = "com.mapper")
 public class TimelyFileLinkApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(TimelyFileLinkApplication.class, args);
