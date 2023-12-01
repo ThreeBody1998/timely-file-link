@@ -1,10 +1,10 @@
 package com.pojo.custom;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * description 文件缓存VO
+ *
  * @author 周建泽
  * @date 2023/11/27
  */
@@ -15,11 +15,12 @@ public class FileCacheVO {
      */
     private String fileName;
     /**
-     * 文件链接
+     * 文件存放地址
      */
-    private String fileUrl;
+    private String filePath;
 
-    public FileCacheVO(FileVO fileVO){
-        this.fileName = fileVO.getFileName();
+    public FileCacheVO(FileUploadResult fileUploadResult) {
+        this.fileName = fileUploadResult.getFileName();
+        this.filePath = fileUploadResult.getFilePath();
     }
 }

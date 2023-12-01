@@ -2,11 +2,8 @@ package com.strategy.impl;
 
 import com.pojo.custom.FileCacheVO;
 import com.strategy.ResponseStrategy;
-import com.util.YmlUtil;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -30,8 +27,6 @@ import java.util.Objects;
 @Component
 public class DownLoadFileStrategy implements ResponseStrategy {
 
-    @Autowired
-    private YmlUtil ymlUtil;
     /**
      * 最大字节大小
      */
@@ -46,7 +41,7 @@ public class DownLoadFileStrategy implements ResponseStrategy {
         response.setHeader("cache-control", "no-cache");
         response.setHeader("expires", "0");
         //以流的形式返回文件
-        Path filePath=Paths.get(ymlUtil.getFilePath()+fileCacheVO.getFileUrl());
+        Path filePath=Paths.get(fileCacheVO.getFilePath());
         try {
             Resource resource = new UrlResource(filePath.toUri());
             InputStream inputStream = Objects.requireNonNull(resource).getInputStream();

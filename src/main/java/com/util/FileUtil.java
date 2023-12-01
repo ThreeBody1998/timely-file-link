@@ -20,7 +20,7 @@ public class FileUtil {
      * @param uploadFile    文件
      * @param fileName  文件名
      * @param saveFolderPath    保存文件夹路径
-     * @return
+     * @return  操作结果
      */
     public static OperateResult fileUpload(MultipartFile uploadFile, String fileName, String saveFolderPath){
         OperateResult operateResult=new OperateResult();
@@ -34,7 +34,7 @@ public class FileUtil {
         }
         //存储文件
         try (InputStream inputStream = new ByteArrayInputStream(uploadFile.getBytes())) {
-            FileOutputStream fileOutputStream = new FileOutputStream(saveFolderPath + "/" + fileName);
+            FileOutputStream fileOutputStream = new FileOutputStream(saveFolderPath + fileName);
             byte[] buffer = new byte[1024];
             while (inputStream.read(buffer) != -1) {
                 fileOutputStream.write(buffer);

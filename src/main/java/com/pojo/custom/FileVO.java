@@ -2,6 +2,7 @@ package com.pojo.custom;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.beans.BeanUtils;
 
 /**
  * @Author 灵感大王
@@ -22,5 +23,9 @@ public class FileVO {
      * 文件链接
      */
     private String fileUrl;
+
+    public FileVO(FileUploadResult fileUploadResult){
+        BeanUtils.copyProperties(fileUploadResult,this);
+    }
 
 }
